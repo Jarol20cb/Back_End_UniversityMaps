@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class Destiny {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private int idDestino;
     @Column(name = "aula",length = 40,nullable = false)
     private String aulaDestino;
     @Column(name = "pabellon",length = 40,nullable = false)
@@ -18,19 +18,19 @@ public class Destiny {
     public Destiny() {
     }
 
-    public Destiny(int id, String aulaDestino, String pabellonDestino, String facultadDestino) {
-        this.id = id;
+    public Destiny(int idDestino, String aulaDestino, String pabellonDestino, String facultadDestino) {
+        this.idDestino = idDestino;
         this.aulaDestino = aulaDestino;
         this.pabellonDestino = pabellonDestino;
         this.facultadDestino = facultadDestino;
     }
 
-    public int getId() {
-        return id;
+    public int getIdDestino() {
+        return idDestino;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdDestino(int idDestino) {
+        this.idDestino = idDestino;
     }
 
     public String getAulaDestino() {

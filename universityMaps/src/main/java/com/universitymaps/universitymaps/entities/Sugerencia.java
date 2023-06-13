@@ -5,26 +5,30 @@ import javax.persistence.*;
 @Entity
 @Table(name = "sugerencias")
 public class Sugerencia {
-@Id
-@GeneratedValue(strategy =  GenerationType.IDENTITY)
-    private int id;
-@Column(name = "Descripcion",length = 300,nullable = false)
+    @Id
+    @GeneratedValue(strategy =  GenerationType.IDENTITY)
+    private int idSugerencia;
+    @Column(name = "descripcionSugerencia",length = 300,nullable = false)
     private String descripcionSugerencia;
+    @ManyToOne
+    @JoinColumn(name = "usuario",nullable = false)
+    private Usuario usuario;
 
     public Sugerencia() {
     }
 
-    public Sugerencia(int id, String descripcionSugerencia) {
-        this.id = id;
+    public Sugerencia(int idSugerencia, String descripcionSugerencia, Usuario usuario) {
+        this.idSugerencia = idSugerencia;
         this.descripcionSugerencia = descripcionSugerencia;
+        this.usuario = usuario;
     }
 
-    public int getId() {
-        return id;
+    public int getIdSugerencia() {
+        return idSugerencia;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdSugerencia(int idSugerencia) {
+        this.idSugerencia = idSugerencia;
     }
 
     public String getDescripcionSugerencia() {
@@ -33,5 +37,13 @@ public class Sugerencia {
 
     public void setDescripcionSugerencia(String descripcionSugerencia) {
         this.descripcionSugerencia = descripcionSugerencia;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 }

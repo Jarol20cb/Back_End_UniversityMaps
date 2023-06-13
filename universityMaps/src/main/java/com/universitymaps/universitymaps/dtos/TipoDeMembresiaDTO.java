@@ -3,17 +3,17 @@ package com.universitymaps.universitymaps.dtos;
 import java.time.LocalDate;
 
 public class TipoDeMembresiaDTO {
-    private int id;
+    private int idTipoDeMembresia;
     private LocalDate fechainicioTipoDeMembresia;
     private LocalDate fechafinTipoDeMembresia;
     private String descripcionTipoDeMembresia;
 
-    public int getId() {
-        return id;
+    public int getIdTipoDeMembresia() {
+        return idTipoDeMembresia;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdTipoDeMembresia(int idTipoDeMembresia) {
+        this.idTipoDeMembresia = idTipoDeMembresia;
     }
 
     public LocalDate getFechainicioTipoDeMembresia() {

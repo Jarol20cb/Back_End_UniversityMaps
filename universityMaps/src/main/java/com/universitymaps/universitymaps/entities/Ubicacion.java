@@ -10,13 +10,14 @@ public class Ubicacion {
     private int idUbicacion;
     @Column(name = "descripcion",nullable = false)
     private String descripcionUbicacion;
-    @Column(name = "universidad",nullable = false)
-    private int universidad;
+    @ManyToOne
+    @JoinColumn(name = "universidad",nullable = false)
+    private Universidad universidad;
 
     public Ubicacion() {
     }
 
-    public Ubicacion(int idUbicacion, String descripcionUbicacion, int universidad) {
+    public Ubicacion(int idUbicacion, String descripcionUbicacion, Universidad universidad) {
         this.idUbicacion = idUbicacion;
         this.descripcionUbicacion = descripcionUbicacion;
         this.universidad = universidad;
@@ -38,11 +39,11 @@ public class Ubicacion {
         this.descripcionUbicacion = descripcionUbicacion;
     }
 
-    public int getUniversidad() {
+    public Universidad getUniversidad() {
         return universidad;
     }
 
-    public void setUniversidad(int universidad) {
+    public void setUniversidad(Universidad universidad) {
         this.universidad = universidad;
     }
 }

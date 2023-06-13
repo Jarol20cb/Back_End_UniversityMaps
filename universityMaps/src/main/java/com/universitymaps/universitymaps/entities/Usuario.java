@@ -21,13 +21,14 @@ public class Usuario {
     private int telefonoUsuario;
     @Column(name = "correo",length = 40,nullable = false)
     private String correoUsuario;
-    @Column(name = "universidad",nullable = false)
-    private int universidad;
+    @ManyToOne
+    @JoinColumn(name = "universidad",nullable = false)
+    private Universidad universidad;
 
     public Usuario() {
     }
 
-    public Usuario(int idUsuario, String nombreUsuario, String apellidoPaternoUsuario, String apellidoMaternoUsuario, LocalDate fechaNacimientoUsuario, int telefonoUsuario, String correoUsuario, int universidad) {
+    public Usuario(int idUsuario, String nombreUsuario, String apellidoPaternoUsuario, String apellidoMaternoUsuario, LocalDate fechaNacimientoUsuario, int telefonoUsuario, String correoUsuario, Universidad universidad) {
         this.idUsuario = idUsuario;
         this.nombreUsuario = nombreUsuario;
         this.apellidoPaternoUsuario = apellidoPaternoUsuario;
@@ -94,11 +95,11 @@ public class Usuario {
         this.correoUsuario = correoUsuario;
     }
 
-    public int getUniversidad() {
+    public Universidad getUniversidad() {
         return universidad;
     }
 
-    public void setUniversidad(int universidad) {
+    public void setUniversidad(Universidad universidad) {
         this.universidad = universidad;
     }
 }

@@ -3,20 +3,17 @@ package com.universitymaps.universitymaps.dtos;
 import javax.persistence.Column;
 
 public class DestinyDTO {
-    private int id;
-
+    private int idDestino;
     private String aulaDestino;
-
     private String pabellonDestino;
-
     private String facultadDestino;
 
     public int getId() {
-        return id;
+        return idDestino;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setId(int idDestino) {
+        this.idDestino = idDestino;
     }
 
     public String getAulaDestino() {

@@ -1,15 +1,15 @@
 package com.universitymaps.universitymaps.dtos;
 
+import com.universitymaps.universitymaps.entities.Ubicacion;
+import com.universitymaps.universitymaps.entities.Usuario;
+
 import javax.persistence.Column;
 
 public class UbicacionFavDTO {
     private int idUbicacionFavorita;
-
     private String descripcionUbicacionFavorita;
-
-    private int ubicacion;
-
-    private int usuario;
+    private Ubicacion ubicacion;
+    private Usuario usuario;
 
     public int getIdUbicacionFavorita() {
         return idUbicacionFavorita;
@@ -27,19 +27,19 @@ public class UbicacionFavDTO {
         this.descripcionUbicacionFavorita = descripcionUbicacionFavorita;
     }
 
-    public int getUbicacion() {
+    public Ubicacion getUbicacion() {
         return ubicacion;
     }
 
-    public void setUbicacion(int ubicacion) {
+    public void setUbicacion(Ubicacion ubicacion) {
         this.ubicacion = ubicacion;
     }
 
-    public int getUsuario() {
+    public Usuario getUsuario() {
         return usuario;
     }
 
-    public void setUsuario(int usuario) {
+    public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
 }

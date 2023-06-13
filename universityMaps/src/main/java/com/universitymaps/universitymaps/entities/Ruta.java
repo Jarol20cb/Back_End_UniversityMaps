@@ -8,15 +8,17 @@ public class Ruta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idRuta;
-    @Column(name = "usuario",nullable = false)
-    private int usuario;
-    @Column(name = "destino",nullable = false)
-    private int destino;
+    @ManyToOne
+    @JoinColumn(name = "usuario",nullable = false)
+    private Usuario usuario;
+    @ManyToOne
+    @JoinColumn(name = "destino",nullable = false)
+    private Destiny destino;
 
     public Ruta() {
     }
 
-    public Ruta(int idRuta, int usuario, int destino) {
+    public Ruta(int idRuta, Usuario usuario, Destiny destino) {
         this.idRuta = idRuta;
         this.usuario = usuario;
         this.destino = destino;
@@ -30,19 +32,19 @@ public class Ruta {
         this.idRuta = idRuta;
     }
 
-    public int getUsuario() {
+    public Usuario getUsuario() {
         return usuario;
     }
 
-    public void setUsuario(int usuario) {
+    public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
 
-    public int getDestino() {
+    public Destiny getDestino() {
         return destino;
     }
 
-    public void setDestino(int destino) {
+    public void setDestino(Destiny destino) {
         this.destino = destino;
     }
 }

@@ -1,13 +1,14 @@
 package com.universitymaps.universitymaps.dtos;
 
+import com.universitymaps.universitymaps.entities.Destiny;
+import com.universitymaps.universitymaps.entities.Usuario;
+
 import javax.persistence.Column;
 
 public class RutaDTO {
     private int idRuta;
-
-    private int usuario;
-
-    private int destino;
+    private Usuario usuario;
+    private Destiny destino;
 
     public int getIdRuta() {
         return idRuta;
@@ -17,19 +18,19 @@ public class RutaDTO {
         this.idRuta = idRuta;
     }
 
-    public int getUsuario() {
+    public Usuario getUsuario() {
         return usuario;
     }
 
-    public void setUsuario(int usuario) {
+    public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
 
-    public int getDestino() {
+    public Destiny getDestino() {
         return destino;
     }
 
-    public void setDestino(int destino) {
+    public void setDestino(Destiny destino) {
         this.destino = destino;
     }
 }

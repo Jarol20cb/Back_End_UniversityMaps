@@ -1,23 +1,19 @@
 package com.universitymaps.universitymaps.dtos;
 
+import com.universitymaps.universitymaps.entities.Universidad;
+
 import javax.persistence.Column;
 import java.time.LocalDate;
 
 public class UsuarioDTO {
     private int idUsuario;
-
     private String nombreUsuario;
     private String apellidoPaternoUsuario;
-
     private String apellidoMaternoUsuario;
-
     private LocalDate fechaNacimientoUsuario;
-
     private int telefonoUsuario;
-
     private String correoUsuario;
-
-    private int universidad;
+    private Universidad universidad;
 
     public int getIdUsuario() {
         return idUsuario;
@@ -75,11 +71,11 @@ public class UsuarioDTO {
         this.correoUsuario = correoUsuario;
     }
 
-    public int getUniversidad() {
+    public Universidad getUniversidad() {
         return universidad;
     }
 
-    public void setUniversidad(int universidad) {
+    public void setUniversidad(Universidad universidad) {
         this.universidad = universidad;
     }
 }

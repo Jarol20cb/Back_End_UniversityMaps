@@ -1,19 +1,17 @@
 package com.universitymaps.universitymaps.dtos;
 
+import com.universitymaps.universitymaps.entities.TipoDeMembresia;
+import com.universitymaps.universitymaps.entities.Usuario;
+
 import javax.persistence.Column;
 
 public class PagoDTO {
     private int idPago;
-
     private String descripcionPago;
-
     private int montoPago;
-
     private String metodoPago;
-
-    private int tipodemembresia;
-
-    private int usuario;
+    private TipoDeMembresia tipodemembresia;
+    private Usuario usuario;
 
     public int getIdPago() {
         return idPago;
@@ -47,19 +45,19 @@ public class PagoDTO {
         this.metodoPago = metodoPago;
     }
 
-    public int getTipodemembresia() {
+    public TipoDeMembresia getTipodemembresia() {
         return tipodemembresia;
     }
 
-    public void setTipodemembresia(int tipodemembresia) {
+    public void setTipodemembresia(TipoDeMembresia tipodemembresia) {
         this.tipodemembresia = tipodemembresia;
     }
 
-    public int getUsuario() {
+    public Usuario getUsuario() {
         return usuario;
     }
 
-    public void setUsuario(int usuario) {
+    public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
 }

@@ -6,24 +6,25 @@ import javax.persistence.*;
 @Table(name = "profesores")
 
 public class Profesor {
-@Id
-@GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idProfesor;
-@Column(name = "nombre",length = 40,nullable = false)
+    @Column(name = "nombre",length = 40,nullable = false)
     private String nombreProfesor;
-@Column(name = "apellidoPaterno",length = 40,nullable = false)
+    @Column(name = "apellidoPaterno",length = 40,nullable = false)
     private String apellidoPaternoProfesor;
     @Column(name = "apellidoMaterno",length = 40,nullable = false)
     private String apellidoMaternoProfesor;
     @Column(name = "calificacion",nullable = false)
     private int calificacionProfesor;
-    @Column(name = "universidad",nullable = false)
-    private int universidad;
+    @ManyToOne
+    @JoinColumn(name = "universidad",nullable = false)
+    private Universidad universidad;
 
     public Profesor() {
     }
 
-    public Profesor(int idProfesor, String nombreProfesor, String apellidoPaternoProfesor, String apellidoMaternoProfesor, int calificacionProfesor, int universidad) {
+    public Profesor(int idProfesor, String nombreProfesor, String apellidoPaternoProfesor, String apellidoMaternoProfesor, int calificacionProfesor, Universidad universidad) {
         this.idProfesor = idProfesor;
         this.nombreProfesor = nombreProfesor;
         this.apellidoPaternoProfesor = apellidoPaternoProfesor;
@@ -72,11 +73,11 @@ public class Profesor {
         this.calificacionProfesor = calificacionProfesor;
     }
 
-    public int getUniversidad() {
+    public Universidad getUniversidad() {
         return universidad;
     }
 
-    public void setUniversidad(int universidad) {
+    public void setUniversidad(Universidad universidad) {
         this.universidad = universidad;
     }
 }

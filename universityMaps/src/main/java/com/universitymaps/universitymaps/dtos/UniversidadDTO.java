@@ -1,19 +1,19 @@
 package com.universitymaps.universitymaps.dtos;
 
 public class UniversidadDTO {
-    private int id;
+    private int idUniversidad;
     private String nombreUniversidad;
     private String regionUniversidad;
     private String distritoUniversidad;
     private String calleUniversidad;
     private String telefonoUniversidad;
 
-    public int getId() {
-        return id;
+    public int getIdUniversidad() {
+        return idUniversidad;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdUniversidad(int idUniversidad) {
+        this.idUniversidad = idUniversidad;
     }
 
     public String getNombreUniversidad() {

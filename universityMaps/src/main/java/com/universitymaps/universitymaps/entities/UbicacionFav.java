@@ -10,15 +10,17 @@ public class UbicacionFav {
     private int idUbicacionFavorita;
     @Column(name = "descripcion",length = 400,nullable = false)
     private String descripcionUbicacionFavorita;
-    @Column(name = "ubicacion",nullable = false)
-    private int ubicacion;
-    @Column(name = "usuario",nullable = false)
-    private int usuario;
+    @ManyToOne
+    @JoinColumn(name = "ubicacion",nullable = false)
+    private Ubicacion ubicacion;
+    @ManyToOne
+    @JoinColumn(name = "usuario",nullable = false)
+    private Usuario usuario;
 
     public UbicacionFav() {
     }
 
-    public UbicacionFav(int idUbicacionFavorita, String descripcionUbicacionFavorita, int ubicacion, int usuario) {
+    public UbicacionFav(int idUbicacionFavorita, String descripcionUbicacionFavorita, Ubicacion ubicacion, Usuario usuario) {
         this.idUbicacionFavorita = idUbicacionFavorita;
         this.descripcionUbicacionFavorita = descripcionUbicacionFavorita;
         this.ubicacion = ubicacion;
@@ -41,19 +43,19 @@ public class UbicacionFav {
         this.descripcionUbicacionFavorita = descripcionUbicacionFavorita;
     }
 
-    public int getUbicacion() {
+    public Ubicacion getUbicacion() {
         return ubicacion;
     }
 
-    public void setUbicacion(int ubicacion) {
+    public void setUbicacion(Ubicacion ubicacion) {
         this.ubicacion = ubicacion;
     }
 
-    public int getUsuario() {
+    public Usuario getUsuario() {
         return usuario;
     }
 
-    public void setUsuario(int usuario) {
+    public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
 }

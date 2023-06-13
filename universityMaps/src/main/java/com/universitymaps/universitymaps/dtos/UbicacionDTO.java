@@ -1,13 +1,13 @@
 package com.universitymaps.universitymaps.dtos;
 
+import com.universitymaps.universitymaps.entities.Universidad;
+
 import javax.persistence.Column;
 
 public class UbicacionDTO {
     private int idUbicacion;
-
     private String descripcionUbicacion;
-
-    private int universidad;
+    private Universidad universidad;
 
     public int getIdUbicacion() {
         return idUbicacion;
@@ -25,11 +25,11 @@ public class UbicacionDTO {
         this.descripcionUbicacion = descripcionUbicacion;
     }
 
-    public int getUniversidad() {
+    public Universidad getUniversidad() {
         return universidad;
     }
 
-    public void setUniversidad(int universidad) {
+    public void setUniversidad(Universidad universidad) {
         this.universidad = universidad;
     }
 }

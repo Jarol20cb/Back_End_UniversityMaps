@@ -14,15 +14,17 @@ public class Pago {
     private int montoPago;
     @Column(name = "metodo",length = 40,nullable = false)
     private String metodoPago;
-    @Column(name = "tipoMembresia",nullable = false)
-    private int tipodemembresia;
-    @Column(name = "usuario",nullable = false)
-    private int usuario;
+    @ManyToOne
+    @JoinColumn(name = "tipoMembresia",nullable = false)
+    private TipoDeMembresia tipodemembresia;
+    @ManyToOne
+    @JoinColumn(name = "usuario",nullable = false)
+    private Usuario usuario;
 
     public Pago() {
     }
 
-    public Pago(int idPago, String descripcionPago, int montoPago, String metodoPago, int tipodemembresia, int usuario) {
+    public Pago(int idPago, String descripcionPago, int montoPago, String metodoPago, TipoDeMembresia tipodemembresia, Usuario usuario) {
         this.idPago = idPago;
         this.descripcionPago = descripcionPago;
         this.montoPago = montoPago;
@@ -63,19 +65,19 @@ public class Pago {
         this.metodoPago = metodoPago;
     }
 
-    public int getTipodemembresia() {
+    public TipoDeMembresia getTipodemembresia() {
         return tipodemembresia;
     }
 
-    public void setTipodemembresia(int tipodemembresia) {
+    public void setTipodemembresia(TipoDeMembresia tipodemembresia) {
         this.tipodemembresia = tipodemembresia;
     }
 
-    public int getUsuario() {
+    public Usuario getUsuario() {
         return usuario;
     }
 
-    public void setUsuario(int usuario) {
+    public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
 }

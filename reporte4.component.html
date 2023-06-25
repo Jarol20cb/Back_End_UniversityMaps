@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="container">
+    <div style=" text-align: center;">
+      <h1 class="big-heading">Nombres de membresia y su cantidad de usuarios</h1>
+    </div><br>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+      <ng-container matColumnDef="descripcionMembresia">
+        <th mat-header-cell *matHeaderCellDef> Membresia </th>
+        <td mat-cell *matCellDef="let element of contador"> {{element.descripcionMembresia}} </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="contador">
+        <th mat-header-cell *matHeaderCellDef> Cantidad de usuarios </th>
+        <td mat-cell *matCellDef="let element of contador"> {{element.contadorUsuarios}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+  </div>
+</body>
+</html>
